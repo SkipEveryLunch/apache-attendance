@@ -1,16 +1,19 @@
 <?php 
   $title = "index";
-  require_once "includes/header.php"?>
+  require_once "includes/header.php";
+  require_once "db/conn.php";
+  $specialities = $crud->getSpecialities();
+?>
 <h1 class="text-center">Registration for Conference</h1>
 
 <form method="post" action="success.php">
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+    <input required type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name">
+    <input required type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name">
   </div>
   <div class="form-group">
     <label for="dateOfBirth">Date of Birth</label>
@@ -20,15 +23,16 @@
     <label for="speciality">Speciality</label>
     <select class="form-control" id="speciality"
     name="speciality">
-      <option>Database Admin</option>
-      <option>Software Developer</option>
-      <option>Web Administrator</option>
-      <option>Other</option>
+      <?php
+          while($r = $specialities->fetch(PDO::FETCH_ASSOC)){
+      ?>
+        <option value="<?php echo $r["speciality_id"]?>"><?php echo $r["name"]?></option>
+      <?php } ?>
     </select>
   </div>
   <div class="form-group">
     <label for="emailAddress">Email Address</label>
-    <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter Email Address">
+    <input required type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter Email Address">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">

@@ -22,7 +22,8 @@
             $( "#dateOfBirth" ).datepicker({
                 changeMonth: true,
                 changeYear: true,
-                yearRange:"-150:+0"
+                yearRange:"-150:+0",
+                dateFormat:"yy-mm-dd"
             });
         } );
     </script>
