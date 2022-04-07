@@ -18,8 +18,8 @@
       ?>
         <tr>
       <td><?php echo $r["attendee_id"]?></td>
-      <td><?php echo $r["first_name"]?></td>
-      <td><?php echo $r["last_name"]?></td>
+      <td><?php echo $r["firstname"]?></td>
+      <td><?php echo $r["lastname"]?></td>
       <td><?php echo $r["name"]?></td>
       <td>
         <a class="btn btn-primary" href="<?php

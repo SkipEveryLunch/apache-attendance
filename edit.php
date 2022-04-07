@@ -17,19 +17,19 @@
   <div class="form-group">
     <label for="firstName">First Name</label>
     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name"
-    value="<?php echo $attendee["first_name"]?>"
+    value="<?php echo $attendee["firstname"]?>"
     >
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name"
-    value="<?php echo $attendee["last_name"]?>"
+    value="<?php echo $attendee["lastname"]?>"
     >
   </div>
   <div class="form-group">
     <label for="dateOfBirth">Date of Birth</label>
     <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="click here and pick up a date from callendar"
-    value="<?php echo $attendee["date_of_birth"]?>"
+    value="<?php echo $attendee["dateofbirth"]?>"
     >
   </div>
   <div class="form-group">
@@ -48,14 +48,14 @@
   <div class="form-group">
     <label for="emailAddress">Email Address</label>
     <input type="email" class="form-control" id="emailAddress" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter Email Address"
-    value="<?php echo $attendee["email_address"]?>"
+    value="<?php echo $attendee["emailaddress"]?>"
     >
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="contactNumber">Contact Number</label>
     <input type="phone" class="form-control" id="contactNumber" name="contactNumber" aria-describedby="phoneHelp" placeholder="Enter Contact Number"
-    value="<?php echo $attendee["contact_number"]?>"
+    value="<?php echo $attendee["contactnumber"]?>"
     >
     <small id="phoneHelp" class="form-text text-muted">We'll never share your phone with anyone else.</small>
   </div>

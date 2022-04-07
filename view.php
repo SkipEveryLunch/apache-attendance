@@ -14,19 +14,19 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">
-        <?php echo $attendee["first_name"] ." ". $attendee["last_name"] ?>
+        <?php echo $attendee["firstname"] ." ". $attendee["lastname"] ?>
       </h5>
       <h6 class="card-title">
         <?php echo $attendee["name"] ?>
       </h6>
       <p class="card-text">
-        <?php echo "birthdate: ".$attendee["date_of_birth"]?>
+        <?php echo "birthdate: ".$attendee["dateofbirth"]?>
       </p>
       <p class="card-text">
-        <?php echo $attendee["email_address"]?>
+        <?php echo $attendee["emailaddress"]?>
       </p>
       <p class="card-text">
-        <?php echo $attendee["contact_number"]?>
+        <?php echo $attendee["contactnumber"]?>
       </p>
     </div>
   </div>

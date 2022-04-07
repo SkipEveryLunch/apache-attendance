@@ -6,7 +6,7 @@
     }
     public function insertAttendees($fname,$lname,$dob,$email,$contact,$speciality){
       try{
-        $sql = "INSERT INTO attendee(first_name,last_name,date_of_birth,email_address,contact_number,speciality_id) VALUES (:fname,:lname,:dob,:email,:contact,:speciality)";
+        $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,contactnumber,speciality_id) VALUES (:fname,:lname,:dob,:email,:contact,:speciality)";
         $statement = $this->db->prepare($sql);
         $statement->bindparam(":fname",$fname);
         $statement->bindparam(":lname",$lname);
@@ -46,7 +46,7 @@
     }
     public function editAttendee($id,$fname,$lname,$dob,$email,$contact,$speciality){
       try{
-        $sql = "UPDATE `attendee` SET `first_name` = :fname, `last_name` = :lname, `date_of_birth` = :dob, `email_address` = :email, `contact_number` = :contact, `speciality_id` = :speciality WHERE `attendee_id` =  :id";
+        $sql = "UPDATE `attendee` SET `firstname` = :fname, `lastname` = :lname, `dateofbirth` = :dob, `emailaddress` = :email, `contactnumber` = :contact, `speciality_id` = :speciality WHERE `attendee_id` =  :id";
         $statement = $this->db->prepare($sql);
         $statement->bindparam(":id",$id);
         $statement->bindparam(":fname",$fname);
