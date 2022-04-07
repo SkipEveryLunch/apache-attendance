@@ -6,7 +6,7 @@
     }
     public function insertAttendees($fname,$lname,$dob,$email,$contact,$speciality){
       try{
-        $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,contactnumber,speciality_id) VALUES (:fname,:lname,:dob,:email,:contact,:speciality)";
+        $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id) VALUES (:fname,:lname,:dob,:email,:contact,:speciality)";
         $statement = $this->db->prepare($sql);
         $statement->bindparam(":fname",$fname);
         $statement->bindparam(":lname",$lname);
@@ -23,7 +23,7 @@
     }
     public function getAttendees(){
       try{
-        $sql = "select * from attendee inner join specialities on attendee.speciality_id = specialities.speciality_id";
+        $sql = "select * from attendee inner join specialities on attendee.specialty_id = specialities.specialty_id";
         $result = $this->db->query($sql);
         return $result;
       }catch(PDOException $e){
@@ -33,7 +33,7 @@
     }
     public function getAttendee($id){
       try{
-        $sql = "select * from attendee inner join specialities on attendee.speciality_id = specialities.speciality_id where attendee_id = :id";
+        $sql = "select * from attendee inner join specialities on attendee.specialty_id = specialities.specialty_id where attendee_id = :id";
         $statement = $this->db->prepare($sql);
         $statement->bindparam(":id",$id);
         $statement->execute();
@@ -46,7 +46,7 @@
     }
     public function editAttendee($id,$fname,$lname,$dob,$email,$contact,$speciality){
       try{
-        $sql = "UPDATE `attendee` SET `firstname` = :fname, `lastname` = :lname, `dateofbirth` = :dob, `emailaddress` = :email, `contactnumber` = :contact, `speciality_id` = :speciality WHERE `attendee_id` =  :id";
+        $sql = "UPDATE `attendee` SET `firstname` = :fname, `lastname` = :lname, `dateofbirth` = :dob, `emailaddress` = :email, `contactnumber` = :contact, `specialty_id` = :speciality WHERE `attendee_id` =  :id";
         $statement = $this->db->prepare($sql);
         $statement->bindparam(":id",$id);
         $statement->bindparam(":fname",$fname);

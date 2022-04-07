@@ -39,8 +39,8 @@
       <?php
           while($r = $specialities->fetch(PDO::FETCH_ASSOC)){
       ?>
-        <option value="<?php echo $r["speciality_id"]?>"
-        <?php if($r["speciality_id"]==$attendee["speciality_id"])echo "selected"?>
+        <option value="<?php echo $r["specialty_id"]?>"
+        <?php if($r["specialty_id"]==$attendee["specialty_id"])echo "selected"?>
         ><?php echo $r["name"]?></option>
       <?php } ?>
     </select>
